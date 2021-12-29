@@ -1,0 +1,2 @@
+# This command will run the created image as a container with systemctl enabled on the docker image
+docker run -ti --tmpfs /tmp --tmpfs /run -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 80:80 centos/nginx
