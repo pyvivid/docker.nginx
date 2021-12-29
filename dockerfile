@@ -10,9 +10,11 @@ rm -f /lib/systemd/system/sockets.target.wants/*udev*; \
 rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
 rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;
-RUN yum -y install httpd
+RUN yum update –y
+RUN yum –y install epel-release
+RUN yum –y install nginx
 RUN yum clean all
-RUN systemctl enable httpd.service
+RUN systemctl enable nginx
 VOLUME [ "/sys/fs/cgroup" ]
 EXPOSE 80 8080
 CMD ["/usr/sbin/init"]
