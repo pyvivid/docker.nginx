@@ -1,5 +1,5 @@
 FROM roboxes/centos8
-MAINTAINER arrzion-data-systems <mgmt.webs@arrzion.com>
+# MAINTAINER arrzion-data-systems <mgmt.webs@arrzion.com>
 ENV container docker
 RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == \
 systemd-tmpfiles-setup.service ] || rm -f $i; done); \
